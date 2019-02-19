@@ -5,11 +5,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Nova+Flat" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/style.css">
+  <title>Pokémon</title>
 </head>
 
 <body>
+  <main class="container-fluid">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1 class="mt-3">Header</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum accusamus corporis, asperiores nesciunt,
+          animi fugiat dignissimos</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1 class="mt-3">List</h1>
+          </div>
+          <span id="list"></span>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 center-line">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1 class="mt-3">Pokedex</h1>
+          </div>
+          <span id="poke-active">
 
+
+          </span>
+        </div>
+
+      </div>
+    </div>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+  <script type="module" src="app/main.js"></script>
 </body>
 
 </html>

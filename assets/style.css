@@ -1,0 +1,16 @@
+* {
+font-family: 'Nova Flat', cursive;
+}
+
+body {
+  background-image: url('/assets/tapio-haaja-1264187-unsplash.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh
+}
+
+
+
+center-line {
+  border-left: 2px solid white;
+}
