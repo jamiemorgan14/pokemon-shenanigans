@@ -1,4 +1,5 @@
 import Pokemon from "../models/pokemon.js";
+import ActivePokemon from "../models/activePoke.js";
 
 let _pokeApi = axios.create({
   baseURL: 'https://pokeapi.co/api/v2/pokemon'
@@ -41,7 +42,7 @@ export default class PokemonService {
   }
 
   get PokeActive() {
-    return new Pokemon(_state.pokeActive)
+    return new ActivePokemon(_state.pokeActive)
   }
 
   getPokeData(name = '') {
@@ -55,9 +56,9 @@ export default class PokemonService {
       })
   }
   getDetails(name) {
-    _pokeApi.get()
+    _pokeApi.get(name)
       .then(res => {
-        let data = new Pokemon(res.data)
+        let data = new ActivePokemon(res.data)
         setState('pokeActive', data)
       })
       .catch(err => {
