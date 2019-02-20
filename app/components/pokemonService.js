@@ -6,7 +6,7 @@ let _pokeApi = axios.create({
 })
 
 let _sandbox = axios.create({
-  baseURL: 'https://bcw-sandbox.herokuapp.com/api/Common/heroes'
+  baseURL: 'https://bcw-sandbox.herokuapp.com/api/jamie/heroes'
 })
 
 let _state = {
@@ -45,6 +45,10 @@ export default class PokemonService {
     return new ActivePokemon(_state.pokeActive)
   }
 
+  get Pokedex() {
+    return _state.pokeDex.map(p => new ActivePokemon(p))
+  }
+
   getPokeData(name = '') {
     _pokeApi.get()
       .then(res => {
@@ -55,6 +59,7 @@ export default class PokemonService {
         console.error(err)
       })
   }
+
   getDetails(name) {
     _pokeApi.get(name)
       .then(res => {
@@ -65,4 +70,32 @@ export default class PokemonService {
         console.error(err)
       })
   }
+
+  addToTeam(name) {
+    let poke = _state.pokeActive
+    let myPoke = _state.pokeDex.find(p => p.name == poke.name)
+    if (myPoke) {
+      alert('duplicate Pokemon')
+      return
+    }
+    _sandbox.post('', poke)
+      .then(res => {
+        this.getMyTeamData()
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+  //GET DATA
+  getMyTeamData() {
+    _sandbox.get()
+      .then(res => {
+        let data = res.data.data.map(p => new ActivePokemon(p))
+        setState('pokeDex', data)
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }
+
 }

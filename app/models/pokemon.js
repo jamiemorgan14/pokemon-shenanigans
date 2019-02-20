@@ -6,6 +6,6 @@ export default class Pokemon {
   }
 
   getTemplate() {
-    return `<h4 class="text-light" onclick="app.controllers.pokemonController.getDetails('${this.name}')">${this.name.toUpperCase()}</h4>`
+    return `<h4 class="text-light" onclick="app.controllers.pokemonController.getDetails('${this.name}')">${this.name}</h4>`
   }
 }
