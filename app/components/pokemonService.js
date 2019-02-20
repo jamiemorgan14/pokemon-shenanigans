@@ -1,10 +1,12 @@
 import Pokemon from "../models/pokemon.js";
 import ActivePokemon from "../models/activePoke.js";
 
+// @ts-ignore
 let _pokeApi = axios.create({
   baseURL: 'https://pokeapi.co/api/v2/pokemon'
 })
 
+// @ts-ignore
 let _sandbox = axios.create({
   baseURL: 'https://bcw-sandbox.herokuapp.com/api/jamie/heroes'
 })

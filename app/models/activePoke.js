@@ -12,7 +12,6 @@ export default class ActivePokemon {
                 <div class="card-body">
                   <h5 class="card-title mt-0">${this.name}</h5>
                   <p class="card-text">${this.description}</p>
-                  <p class="card-text mb-2">Moves: ${this.moves1}, ${this.moves2}</p>
                   <a href="#" class="btn btn-primary" onclick="app.controllers.pokemonController.addToTeam('${this.name}')">Add to Pokedex</a>
                 </div>
               </div>
